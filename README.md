@@ -1,2 +1,2 @@
 # el.js
-Just a simple query function
+Just a simple lightweight DOM query function
