@@ -1,6 +1,6 @@
 /*
  * A simple lightweight DOM query function
- * Author: Igor J. Santos <igor@getidigital.com.br>
+ * Author: Igor J. Santos <igor@getdigital.com.br>
  */
 'use strict';
 
