@@ -1,6 +1,10 @@
+/*
+ * A simple lightweight DOM query function
+ * Author: Igor J. Santos <igor@getdigital.com.br>
+ */
 'use strict';
 
-var $el = (function (document, window, $el) {
+window.$el = (function (document, window, $el) {
     var forEach = 'forEach',
         node = Node.prototype,
         nodeList = NodeList.prototype,
@@ -54,7 +58,7 @@ var $el = (function (document, window, $el) {
                 this.classList.remove(c[i]);
         return this;
     };
-
+    window
     node.toggleClass = function (c) {
         c = c.split(' ');
         for (var i = 0; i < c.length; i++)
