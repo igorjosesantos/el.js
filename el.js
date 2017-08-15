@@ -33,6 +33,16 @@ window.$el = (function (document, window, $el) {
         return this;
     };
 
+    node.show = function () {
+        this.style.display = 'block';
+        return this;
+    };
+
+    node.hide = function () {
+        this.style.display = 'none';
+        return this;
+    };
+
     node.hasClass = function (c) {
         var e = Array.prototype.slice.call(this.classList);
         c = c.split(' ');
@@ -58,7 +68,7 @@ window.$el = (function (document, window, $el) {
                 this.classList.remove(c[i]);
         return this;
     };
-    window
+    
     node.toggleClass = function (c) {
         c = c.split(' ');
         for (var i = 0; i < c.length; i++)
@@ -84,29 +94,52 @@ window.$el = (function (document, window, $el) {
         return this;
     };
 
+    nodeList.show = function () {
+        this[forEach](function (el) {
+            el.show();
+        });
+        return this;
+    };
+
+    nodeList.hide = function () {
+        this[forEach](function (el) {
+            el.hide();
+        });
+        return this;
+    };
+
     nodeList.hasClass = function (c, all) {
-        if (all === undefined) all = true;
+        if (all === undefined) {
+            all = true;
+        }
         for (var i = this.length - 1; i >= 0; --i) {
             var hc = this[i].hasClass(c);
-            if (all && !hc) return false;
-            if (!all && hc) return true;
+            if (all && !hc) {
+                return false;
+            }
+            if (!all && hc) {
+                return true;
+            }
         }
         return true;
     };
 
     nodeList.addClass = function (c) {
-        for (var i = 0; i < this.length; ++i)
-            this[i].addClass(c);
+        this[forEach](function (el) {
+            el.addClass(c);
+        });
     };
 
     nodeList.removeClass = function (c) {
-        for (var i = 0; i < this.length; ++i)
-            this[i].removeClass(c);
+        this[forEach](function (el) {
+            el.removeClass(c);
+        });
     };
 
     nodeList.toggleClass = function (c) {
-        for (var i = 0; i < this.length; ++i)
-            this[i].toggleClass(c);
+        this[forEach](function (el) {
+            el.toggleClass(c);
+        });
     };
 
     // NodeList Events

@@ -1,0 +1,19 @@
+{
+  "name": "el",
+  "version": "1.0.0",
+  "description": "A simple lightweight DOM query function",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorjsantos/el.js.git"
+  },
+  "author": "Igor J. Santos <igor@getdigital.com.br>",
+  "license": "See license in LICENSE",
+  "bugs": {
+    "url": "https://github.com/igorjsantos/el.js/issues"
+  },
+  "homepage": "https://github.com/igorjsantos/el.js#readme"
+}
