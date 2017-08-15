@@ -68,7 +68,7 @@ window.$el = (function (document, window, $el) {
                 this.classList.remove(c[i]);
         return this;
     };
-    
+
     node.toggleClass = function (c) {
         c = c.split(' ');
         for (var i = 0; i < c.length; i++)
@@ -151,10 +151,6 @@ window.$el = (function (document, window, $el) {
 
     $el.on = node.on.bind(Element);
     $el.off = node.off.bind(Element);
-    $el.hasClass = node.hasClass.bind(Element);
-    $el.addClass = node.addClass.bind(Element);
-    $el.removeClass = node.removeClass.bind(Element);
-    $el.toggleClass = node.toggleClass.bind(Element);
 
     return $el;
 })(document, this);
